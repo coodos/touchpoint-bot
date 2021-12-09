@@ -10,7 +10,9 @@ const client = new discord.Client({
   ],
 });
 
-client.on("messageCreate", HandleMessage);
+client.on("messageCreate", (msg: discord.Message) => {
+  HandleMessage(msg, client);
+});
 
 client.on("ready", () => {
   console.log("touchpoint initiated");

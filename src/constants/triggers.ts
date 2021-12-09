@@ -1,1 +1,1 @@
-export const CONNECT_TRIGGER = "$connect";
+export const CONNECT_TRIGGER = "!connect";

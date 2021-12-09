@@ -9,13 +9,16 @@ import { tryConnection } from "./connection.controller";
  * @returns {Promise<void>}
  */
 
-export const HandleMessage = async (msg: discord.Message): Promise<void> => {
+export const HandleMessage = async (
+  msg: discord.Message,
+  client: discord.Client
+): Promise<void> => {
   // get the first word
   const command = msg.content.split(" ")[0].toLowerCase();
 
   // switch case by the command :)
   switch (command) {
     case CONNECT_TRIGGER:
-      return tryConnection(msg);
+      return tryConnection(msg, client);
   }
 };
